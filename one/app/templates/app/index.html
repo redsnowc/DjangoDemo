@@ -24,9 +24,10 @@
     <link rel="stylesheet" href="{% static 'app/index.css' %}">
 {% endblock %}
 {% block content %}
+    {% load myfilter %}
     <ul>
     {% for i in array %}
-        <li>{{ i }}</li>
+        <li>{{ i | do_something:"Test " }}</li>
     {% endfor %}
     </ul>
     <a href="{% url "app:index" %}">return</a>

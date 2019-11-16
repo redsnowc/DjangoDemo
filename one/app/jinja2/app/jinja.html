@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+{#    <link rel="stylesheet" href="../../static/app/index.css">#}
+    <link rel="stylesheet" href="{{ static('app/index.css') }}">
+</head>
+<body>
+<h1>jinja</h1>
+<p>{{ num|for_test(100) }}</p>
+<p>{{ array|join('|') }}</p>
+<a href="{{ url('app:index') }}">return</a>
+</body>
+</html>

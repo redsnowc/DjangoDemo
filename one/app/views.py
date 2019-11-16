@@ -26,3 +26,7 @@ class Two(View):
     def get(self, request):
         return HttpResponse("This is a class view test.")
 
+
+def loop(request):
+    data = {"array": range(1, 11)}
+    return render(request, "app/index.html", data)

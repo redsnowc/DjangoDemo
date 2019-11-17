@@ -15,6 +15,9 @@ class User(models.Model):
     create_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        index_together = ['username', 'phone']
+
 
 class UserProfile(models.Model):
     id = models.IntegerField(primary_key=True)

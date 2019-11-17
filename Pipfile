@@ -9,6 +9,10 @@ verify_ssl = true
 django = "*"
 jinja2 = "*"
 mako = "*"
+jieba = "*"
+mysqlclient = "*"
+ipython = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"

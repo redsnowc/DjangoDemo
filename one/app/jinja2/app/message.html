@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Message</h1>
+{% if error %}
+    <h3>error: {{ error }}</h3>
+{% else %}
+    <span style="color: {{ msg_type.color }}">{{ msg_type.label }}</span>
+    <span style="color: {{ msg_type.color }}">{{ msg|sw_filter }}</span>
+{% endif %}
+</body>
+</html>

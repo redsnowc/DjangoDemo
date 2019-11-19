@@ -6,7 +6,7 @@ from time import time
 
 
 class User(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=20, unique=True, null=False)
     age = models.PositiveSmallIntegerField(default=0)
     phone = models.CharField(max_length=11, null=True, default="", db_index=True)
@@ -18,22 +18,25 @@ class User(models.Model):
     class Meta:
         index_together = ['username', 'phone']
 
+    def __str__(self):
+        return 'user:{}'.format(self.username)
+
 
 class UserProfile(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, default='')
     birthday = models.CharField(max_length=100, null=True, default="")
 
 
 class Diary(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, related_name='diary', on_delete=models.SET_NULL, null=True)
     content = models.TextField()
     create_time = models.IntegerField()
 
 
 class Group(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     user = models.ManyToManyField(User, related_name="group")
     name = models.CharField(max_length=20)
     create_time = models.IntegerField()

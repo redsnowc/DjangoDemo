@@ -13,6 +13,7 @@ jieba = "*"
 mysqlclient = "*"
 ipython = "*"
 pillow = "*"
+faker = "*"
 
 [requires]
 python_version = "3.7"

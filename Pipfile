@@ -6,7 +6,6 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "*"
 jinja2 = "*"
 mako = "*"
 jieba = "*"
@@ -14,6 +13,11 @@ mysqlclient = "*"
 ipython = "*"
 pillow = "*"
 faker = "*"
+redis = "*"
+django-redis = "*"
+django = "==2.2.8"
+pymongo = "*"
+mongoengine = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .test-class {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Django 表单示例</h1>
+<form action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+{#    <table>#}
+{#        {{ form.as_table }}#}
+{#    </table>#}
+{#    <ul>#}
+{#        {{ form.as_ul }}#}
+{#    </ul>#}
+    {% for item in form %}
+        {{ item.label }}
+        {{ item }}
+        {{ item.errors.as_text }}
+    {% endfor %}
+    <span>{{ form.non_field_errors }}</span>
+{#    {{ form.username.label_tag }}#}
+{#    {{ form.username }}#}
+{#    {{ form.password }}#}
+{#    {{ form.submit }}#}
+{#    <label for="username">用户名</label>#}
+{#    <input type="text" id="username" name="username">#}
+{#    <label for="password">密码</label>#}
+{#    <input type="text" id="password" name="password">#}
+{#    <input type="submit" value="提交">#}
+
+    <p style="color: red"></p>
+</form>
+</body>
+</html>

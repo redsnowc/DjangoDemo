@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+{% load myfilter %}
+    {% for i in messages %}
+        <li style="color:{{ i.msg_type.color }}">{{ i.content }} {{ i.created_time|sw_time }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

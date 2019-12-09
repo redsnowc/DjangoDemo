@@ -1,4 +1,5 @@
 import jieba
+from time import localtime, strftime
 
 from app.consts import SensitiveWord
 
@@ -20,3 +21,8 @@ def sensitive_word_filter(value):
             new_value = value.replace(i, "*" * len(i))
         return new_value
     return value
+
+
+def switch_timestamp(value):
+    return strftime("%Y-%m-%d %H:%M:%S", localtime(value))
+

@@ -15,7 +15,7 @@ pillow = "*"
 faker = "*"
 redis = "*"
 django-redis = "*"
-django = "==2.2.8"
+django = "==2.2.18"
 pymongo = "*"
 mongoengine = "*"
 
